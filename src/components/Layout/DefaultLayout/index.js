@@ -1,14 +1,18 @@
 import React from 'react'
 import Header from '../components/Header'
-import SidaBar from '../components/SidaBar'
+import SidaBar from './SidaBar'
+import classNames from 'classnames/bind'
+import styles from './DefaultLayout.module.scss'
 
-const DefaultLayout = ({children}) => {
+const cx = classNames.bind(styles)
+
+const DefaultLayout = ({ children }) => {
      return (
-          <div>
+          <div className={cx('wapper')}>
                <Header />
-               <div className='container'>
+               <div className={cx('container')}>
                     <SidaBar />
-                    <div className='content'>{children}</div>
+                    <div className={cx('content')}>{children}</div>
                </div>
           </div>
      )
